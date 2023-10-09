@@ -6,19 +6,19 @@
 using Fig = curves::Figures;
 
 int Compare(const Fig* a, const Fig* b) {
-  return (a->GetType() < b->GetType());
+  return (a->GetRadius() < b->GetRadius());
 }
 
 int main() {
   std::list<Fig> fig_list{};
   std::list<Fig*> circles{};
 
-  for (Fig fig : fig_list) {
+  for (curves::Figures& fig : fig_list) {
     fig.PrintPoint(1);
     fig.PrintFirstDerivative(1);
   }
 
-  for (Fig fig : fig_list) {
+  for (curves::Figures& fig : fig_list) {
     if (fig.GetType() == curves::kCircle)
       circles.push_back(&fig);
   }
