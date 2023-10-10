@@ -47,7 +47,7 @@ int curves::Ellipse::GetType() const { return kEllipse; }
 
 double curves::Ellipse::GetRadius() const {
   return big_radius_;
-}  /// big - radius + smal - smal_radius;
+}
 
 ///// ----------- Circle ----------- ////
 
@@ -91,7 +91,7 @@ double curves::Circle::GetRadius() const { return radius_; }
 ///// ----------- Helix ----------- ////
 
 bool curves::Helix::Fill(double x, double y, double z, double r, double s) {
-  if (s <= 0 || r <= 0) return false;  ///  || p.z_ != 0    s ?????
+  if (s <= 0 || r <= 0) return false;
 
   center_ = std::move(Point(x, y, z));
   radius_ = r;
